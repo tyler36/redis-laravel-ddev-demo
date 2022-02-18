@@ -12,7 +12,7 @@ This repo demonstrates setup steps for a [redis](https://redis.com/) server for 
 
 - PHP >= 8.0
 - [Composer](https://getcomposer.org/doc/00-intro.md) >= 2.2.6
-- [DDEV](https://github.com/drud/ddev) >= 1.18
+- [DDEV](https://github.com/drud/ddev) >= 1.19
 
 ## Setup
 
@@ -34,4 +34,21 @@ cp .env.example .env
 ```shell
 $ php artisan key:generate
 Application key set successfully.
+```
+
+- Set DDEV hosted redis server; use `ddev describe` to find settings for your project
+
+```env
+# Redis
+CACHE_DRIVER=redis
+REDIS_HOST=ddev-redis-laravel-ddev-demo-redis
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+```
+
+- Start DDEV and visit homepage
+
+```shell
+ddev start
+ddev launch
 ```
