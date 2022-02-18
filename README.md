@@ -52,3 +52,5 @@ REDIS_PORT=6379
 ddev start
 ddev launch
 ```
+
+- The `visits` count is stored in Redis and should increase every time the page reloads.
